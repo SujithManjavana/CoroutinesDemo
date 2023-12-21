@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 val name = async { getUserName() }
                 withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, name.await(), Toast.LENGTH_SHORT).show()
+                    tvUserMessage.text = UserDataManager().getUserCount().toString()
                 }
             }
 
