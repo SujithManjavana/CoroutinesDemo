@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
                 val name = async { getUserName() }
                 withContext(Dispatchers.Main) {
-                    tvUserMessage.text = UserDataManager().getUserCount().toString()
+                    tvUserMessage.text = UserDataManager2().getUserCount().toString()
                 }
             }
 
