@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         tvUserMessage = findViewById(R.id.tvUserMessage)
 
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
-        viewModel.getUserData()
+       // viewModel.getUserData()
         viewModel.users.observe(this) { users ->
             users?.forEach {
                 tvCount.text = "${tvCount.text} ${it.name}\n"

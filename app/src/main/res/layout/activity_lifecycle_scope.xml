@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".LifecycleScopeActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
+    <TextView
+        android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
+        android:textSize="60sp"
         android:visibility="gone" />
 </FrameLayout>

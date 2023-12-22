@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.coroutinesdemo1.ui.main.LifecycleScopeFragment
 import kotlinx.coroutines.delay
@@ -20,10 +22,18 @@ class LifecycleScopeActivity : AppCompatActivity() {
                 .commitNow()
         }
         lifecycleScope.launch {
-            delay(2500)
-            findViewById<ProgressBar>(R.id.progressBar).visibility = View.VISIBLE
-            delay(6000)
-            findViewById<ProgressBar>(R.id.progressBar).visibility = View.GONE
+            delay(1000)
+            val tv = findViewById<TextView>(R.id.tv)
+            tv.visibility = View.VISIBLE
+            for (i in 0..10) {
+                tv.text = i.toString()
+                delay(1000)
+            }
+            Toast.makeText(this@LifecycleScopeActivity, "Finished", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
     }
 }
